@@ -1,0 +1,6 @@
+[11-May-2021 00:34:12 America/Chicago] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home4/kalpdeep/public_html/bizuiaccountingcrm/kcfinder/core/autoload.php on line 15
+[11-May-2021 00:34:12 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function vtlib_purify() in /home4/kalpdeep/public_html/bizuiaccountingcrm/kcfinder/core/uploader.php:50
+Stack trace:
+#0 /home4/kalpdeep/public_html/bizuiaccountingcrm/kcfinder/upload.php(16): uploader->__construct()
+#1 {main}
+  thrown in /home4/kalpdeep/public_html/bizuiaccountingcrm/kcfinder/core/uploader.php on line 50

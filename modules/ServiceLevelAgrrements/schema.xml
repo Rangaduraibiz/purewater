@@ -1,0 +1,22 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_servicelevelagrrements</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_servicelevelagrrements` (
+    `servicelevelagrrementsid` int(11) NOT NULL DEFAULT '0',
+      `category` VARCHAR(128) DEFAULT NULL,
+    `sub_category` VARCHAR(128) DEFAULT NULL,
+    `sla_hours` INT(11) DEFAULT NULL,
+      PRIMARY KEY (`servicelevelagrrementsid`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_servicelevelagrrementscf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_servicelevelagrrementscf` (
+  `servicelevelagrrementsid` int(11) NOT NULL,
+  PRIMARY KEY (`servicelevelagrrementsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>
