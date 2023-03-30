@@ -1,1 +1,1 @@
-Inventory_Detail_Js("Invoice_Detail_Js",{},{});
+Inventory_Detail_Js("servicerequest_Detail_Js",{},{});

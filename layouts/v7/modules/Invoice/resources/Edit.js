@@ -1,4 +1,4 @@
-Inventory_Edit_Js("Invoice_Edit_Js",{},{
+Inventory_Edit_Js("servicerequest_Edit_Js",{},{
     
     accountRefrenceField : false,
     
@@ -81,7 +81,7 @@ Inventory_Edit_Js("Invoice_Edit_Js",{},{
         
         // Added for overlay edit as the module is different
         if(params.search_module == 'Products' || params.search_module == 'Services') {
-            params.module = 'Invoice';
+            params.module = 'servicerequest';
         }
         
 		app.request.get({'data':params}).then(

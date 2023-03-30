@@ -12,7 +12,7 @@
 {strip}
     <div class="col-sm-6">
         <div class="record-header clearfix">
-            <div class="recordImage bginvoice app-{$SELECTED_MENU_CATEGORY}">
+            <div class="recordImage bgservicerequest app-{$SELECTED_MENU_CATEGORY}">
                 {assign var=IMAGE_DETAILS value=$RECORD->getImageDetails()}
                 {foreach key=ITER item=IMAGE_INFO from=$IMAGE_DETAILS}
                     {if !empty($IMAGE_INFO.url)}
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="row info-row">
-                    {assign var=FIELD_MODEL value=$MODULE_MODEL->getField('invoicestatus')}
+                    {assign var=FIELD_MODEL value=$MODULE_MODEL->getField('servicerequeststatus')}
                     <div class="col-lg-7 fieldLabel">
                         <span class="value textOverflowEllipsis" title="{vtranslate($FIELD_MODEL->get('label'),$MODULE)} : {strip_tags($FIELD_MODEL->getDisplayValue($FIELD_MODEL->get('fieldvalue'), $RECORD->getId(), $RECORD))}" {if $FIELD_MODEL->get('uitype') eq '19' or $FIELD_MODEL->get('uitype') eq '20' or $FIELD_MODEL->get('uitype') eq '21'}style="word-wrap: break-word;"{/if}>
                             {include file=$FIELD_MODEL->getUITypeModel()->getDetailViewTemplateName()|@vtemplate_path FIELD_MODEL=$FIELD_MODEL USER_MODEL=$USER_MODEL MODULE=$MODULE_NAME RECORD=$RECORD}

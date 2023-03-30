@@ -1,4 +1,4 @@
-Inventory_Edit_Js("Invoice_Edit_Js",{},{
+Inventory_Edit_Js("servicerequest_Edit_Js",{},{
 	
 	/**
 	 * Function which will register event for Reference Fields Selection

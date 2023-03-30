@@ -1,1 +1,1 @@
-Inventory_List_Js("Invoice_List_Js",{},{});
+Inventory_List_Js("servicerequest_List_Js",{},{});
