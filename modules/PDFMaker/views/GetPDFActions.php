@@ -49,7 +49,7 @@ class PDFMaker_GetPDFActions_View extends Vtiger_BasicAjax_View {
                     . " LEFT JOIN vtiger_pdfmaker_settings "
                     . " ON vtiger_pdfmaker_settings.templateid = vtiger_pdfmaker.templateid "
                     . " WHERE vtiger_pdfmaker.module=? AND vtiger_pdfmaker.module IN (?,?,?,?, ?) ";
-                    $allProductIds = $adb->pquery($sql, array('ServiceReports', 'Invoice', 'Quotes', 'SalesOrder', 'PurchaseOrder', 'ServiceReports'));
+                    $allProductIds = $adb->pquery($sql, array('servicerequest', 'Invoice', 'Quotes', 'SalesOrder', 'PurchaseOrder', 'servicerequest'));
                     $temps = array();
                     while ($row = $adb->fetch_array($allProductIds)) {
                         array_push($temps, array($row['templateid'], $row['description']));

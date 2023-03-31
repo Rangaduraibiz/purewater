@@ -22,7 +22,7 @@ class PDFMaker {
         $this->db = PearDatabase::getInstance();
 
         // array of modules that are allowed for basic version type
-        $this->basicModules = array("20", "21", "22", "23");
+        $this->basicModules = array("20", "21", "22", "23".'91');
         $this->name = "PDFMaker";
         $this->id = getTabId("PDFMaker");
     }

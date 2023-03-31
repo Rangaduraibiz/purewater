@@ -275,7 +275,7 @@ class Vtiger_PackageExport {
 		$this->export_Dependencies($moduleInstance);
 
 		// Export module tables
-	//	$this->export_Tables($moduleInstance);
+		$this->export_Tables($moduleInstance);
 
 		// Export module blocks
 		$this->export_Blocks($moduleInstance);

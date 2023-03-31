@@ -242,7 +242,7 @@ jQuery.Class("PDFMaker_FreeActions_Js", {
 });
 
 jQuery(document).ready(function(){
-	if(jQuery.inArray( app.getModuleName(), [ 'Invoice','Quotes','SalesOrder','PurchaseOrder','ServiceReports' ] ) !== -1){
+	if(jQuery.inArray( app.getModuleName(), [ 'Invoice','Quotes','SalesOrder','PurchaseOrder','ServiceReports','servicerequest' ] ) !== -1){
         var instance = new PDFMaker_FreeActions_Js();
         instance.registerEvents();
     }
