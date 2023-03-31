@@ -1,5 +1,5 @@
 ﻿/**
- * Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
+ * Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
@@ -50,67 +50,4 @@ var initSample = ( function() {
 		return !!CKEDITOR.plugins.get( 'wysiwygarea' );
 	}
 } )();
-
-CKEDITOR.plugins.add( 'ITS4YouAutovariables', {
-	requires: 'textmatch,autocomplete',
-
-	init: function( editor ) {
-		editor.on( 'instanceReady', function() {
-			let config = {},
-				placeholder = [
-					{
-						id: 1,
-						name: 'name',
-						value: '$value$',
-						label: 'label',
-						title: 'title',
-						module: 'module',
-						class: 'type',
-					}
-				];
-
-			function textTestCallback( range ) {
-				if ( !range.collapsed ) {
-					return null;
-				}
-
-				return CKEDITOR.plugins.textMatch.match( range, matchCallback );
-			}
-
-			function matchCallback( text, offset ) {
-				let pattern = /\$([A-z]|\$)*$/,
-					match = text.slice( 0, offset ).match( pattern );
-
-				if ( !match ) {
-					return null;
-				}
-
-				return {
-					start: match.index,
-					end: offset
-				};
-			}
-
-			function dataCallback( matchInfo, callback ) {
-				let data = placeholder.filter( function( item ) {
-					let itemName = '$' + item.name + '$';
-
-					return itemName.indexOf( matchInfo.query.toLowerCase() ) === 0;
-				} );
-
-				callback( data );
-			}
-
-			config.throttle = 1000;
-			config.textTestCallback = textTestCallback;
-			config.dataCallback = dataCallback;
-			config.itemTemplate = '<li class="{class}" data-id="{id}" title="{title}"><div class="titleAC"><b>{label}</b> <i>{module} {title}</i></div><div>{value}</div></li>';
-			config.outputTemplate = '<span>{value}</span>';
-
-			new CKEDITOR.plugins.autocomplete( editor, config ); 
-		} );
-	}
-});
-
-CKEDITOR.config.extraPlugins = 'wysiwygarea,textwatcher,textmatch,autocomplete,ITS4YouAutovariables';
 
