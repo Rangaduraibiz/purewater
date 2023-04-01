@@ -2031,7 +2031,7 @@ function getInventoryModules() {
 	$inventoryModules = array(
 		'Invoice', 'Quotes', 'PurchaseOrder', 'SalesOrder',
 		'ServiceReports', 'StockTransferOrders', 'ServiceOrders', 'FailedParts',
-		'RecommissioningReports', 'ReturnSaleOrders'
+		'servicerequest', 'ReturnSaleOrders'
 	);
 	return $inventoryModules;
 }

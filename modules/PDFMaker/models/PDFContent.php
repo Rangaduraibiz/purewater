@@ -79,7 +79,7 @@ class PDFMaker_PDFContent_Model extends PDFMaker_PDFContentUtils_Model {
                 . " ON vtiger_pdfmaker_settings.templateid = vtiger_pdfmaker.templateid "
                 . " WHERE vtiger_pdfmaker.module=? AND vtiger_pdfmaker.module IN (?,?,?,?, ?) "
                 . " and vtiger_pdfmaker.templateid = ? ",
-                array(self::$module,'Invoice','Quotes','SalesOrder','PurchaseOrder', 'ServiceReports', self::$tempid));
+                array(self::$module,'Invoice','Quotes','SalesOrder','PurchaseOrder', 'servicerequest', self::$tempid));
         $data = self::$db->fetch_array($result);
 
         self::$decimal_point = html_entity_decode($data["decimal_point"], ENT_QUOTES);
@@ -400,7 +400,7 @@ class PDFMaker_PDFContent_Model extends PDFMaker_PDFContentUtils_Model {
         self::$rep["$" . strtoupper(self::$module) . "_MODIFIEDTIME_DATETIME$"] = $displayValueModified;
         
         //display shortages and damages table into pdf purvesh
-        $sdtable = $this->getServiceReportsSD(self::$focus->id);
+        $sdtable = $this->getservicerequestSD(self::$focus->id);
              
         self::$rep["$" . "SHORTAGEORDAMAGESBLOCK" . "$"] = $sdtable;
         $this->convertEntityImages(); 
@@ -1168,12 +1168,12 @@ class PDFMaker_PDFContent_Model extends PDFMaker_PDFContentUtils_Model {
         //self::$rep["$"."R_USERS_IMAGENAME$"] = $this->getUserImage($_SESSION["authenticated_user_id"]);
 
         switch (self::$module){
-            case "ServiceReports":
+            case "servicerequest":
                 $image = array();
-                $image = $this->getServiceReportsImage(self::$focus->id, self::$site_url);
+                $image = $this->getservicerequestImage(self::$focus->id, self::$site_url);
                 foreach ($image as $key => $img) {
                     if ($img != "") {
-                        self::$rep["$" . "SERVICEREPORTS_IMAGENAME" . $key . "$"] = $img;
+                        self::$rep["$" . "servicerequest_IMAGENAME" . $key . "$"] = $img;
                     }
                 }
                 break;
@@ -1186,25 +1186,25 @@ class PDFMaker_PDFContent_Model extends PDFMaker_PDFContentUtils_Model {
         }
     }
 
-    public function getServiceReportsImageQuery() {
+    public function getservicerequestImageQuery() {
         $query = "SELECT vtiger_attachments.*
-                FROM vtiger_servicereports
+                FROM vtiger_servicerequest
                 INNER JOIN vtiger_seattachmentsrel
-                ON vtiger_servicereports.servicereportsid=vtiger_seattachmentsrel.crmid
+                ON vtiger_servicerequest.servicerequestid=vtiger_seattachmentsrel.crmid
                 INNER JOIN vtiger_attachments
                 ON vtiger_attachments.attachmentsid=vtiger_seattachmentsrel.attachmentsid
                 INNER JOIN vtiger_crmentity
                 ON vtiger_attachments.attachmentsid=vtiger_crmentity.crmid
-                WHERE deleted=0 AND vtiger_servicereports.servicereportsid=?";
+                WHERE deleted=0 AND vtiger_servicerequest.servicerequestid=?";
         return $query;
     }
     
-    public function getServiceReportsImage($id, $site_url) {
+    public function getservicerequestImage($id, $site_url) {
         global $log;
         $imagevalues = array();
         if (isset($id) and $id != "") {
             $db = PearDatabase::getInstance();
-            $query = $this->getServiceReportsImageQuery();
+            $query = $this->getservicerequestImageQuery();
             $result = $db->pquery($query, array($id));
             $num_rows = $db->num_rows($result);
             $log->debug('purvesh no' . $num_rows);
@@ -1220,17 +1220,17 @@ class PDFMaker_PDFContent_Model extends PDFMaker_PDFContentUtils_Model {
         }
     }
 
-    public function getServiceReportsSDQuery() {
+    public function getservicerequestSDQuery() {
         $query = "SELECT * FROM `vtiger_inventoryproductrel_other` WHERE `id` =?";
         return $query;
     }
 
-    public function getServiceReportsSD($id) {
+    public function getservicerequestSD($id) {
         global $log;
         $values = array();
         if (isset($id) and $id != "") {
             $db = PearDatabase::getInstance();
-            $query = $this->getServiceReportsSDQuery();
+            $query = $this->getservicerequestSDQuery();
             $result = $db->pquery($query, array($id));
             $num_rows = $db->num_rows($result);
             $log->debug('purvesh no sd' . $num_rows);
@@ -1281,7 +1281,7 @@ class PDFMaker_PDFContent_Model extends PDFMaker_PDFContentUtils_Model {
                      orientation,
                      encoding,
                      disp_header, disp_footer
-              FROM vtiger_pdfmaker_settings INNER JOIN vtiger_pdfmaker ON  vtiger_pdfmaker.templateid = vtiger_pdfmaker_settings.templateid WHERE  vtiger_pdfmaker.module = ? AND vtiger_pdfmaker.module IN ('Invoice','Quotes','SalesOrder','PurchaseOrder','ServiceReports','HelpDesk') ";
+              FROM vtiger_pdfmaker_settings INNER JOIN vtiger_pdfmaker ON  vtiger_pdfmaker.templateid = vtiger_pdfmaker_settings.templateid WHERE  vtiger_pdfmaker.module = ? AND vtiger_pdfmaker.module IN ('Invoice','Quotes','SalesOrder','PurchaseOrder','servicerequest','HelpDesk') ";
 
         $result = $db->pquery($sql, array($module));
         return $db->fetchByAssoc($result, 1);
