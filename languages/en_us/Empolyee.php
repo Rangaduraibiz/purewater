@@ -9,14 +9,13 @@
  *************************************************************************************/
 $languageStrings = array(
 	// Basic Strings
-	'JobCard' => 'Dx Issue Card',
-	'SINGLE_JobCard' => 'Card',
-	'LBL_ADD_RECORD' => 'Add Card',
-	'LBL_RECORDS_LIST' => 'Card List',
-	'LBL_JOBCARD_INFORMATION'=>'Product Details',
-	'LBL_CUSTOMER_INFO'=>'Customer Details',
+	'Empolyee' => 'Employee',
+	'SINGLE_Employee' => 'Employee',
+	'LBL_ADD_RECORD' => 'Add Employee',
+	'LBL_RECORDS_LIST' => 'Employee List',
+	'LBL_EMPOLYEE_INFORMATION'=>'Employee Details',
+	'LBL_EMPPORTAL_INFO'=>'Portal Details',
 	'LBL_SALE_INFO'=>'Sale Details',
-	'Serial Number'=>'Product Modal'
 );
 
 $jsLanguageStrings = array(
