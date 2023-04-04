@@ -29,7 +29,7 @@ $languageStrings = array(
 
 	//Field Labels
 	'Product No' => 'Numer produktu',
-	'Part Number' => 'Kod produktu',
+	'' => 'Kod produktu',
 	'Product Active' => 'Produkt w sprzedaży',
 	'Manufacturer' => 'Producent',
 	'Product Category' => 'Kategoria Produktu',

@@ -710,7 +710,7 @@ $languageStrings = array(
 	'Potential Name' => 'Opportunity Name',
 	'Priority'=>'Priority',
 
-	'Product Name' => 'Part Number',
+	'Product Name' => 'Product Name',
 	'Rating' => 'Rating',
 
 	'Related To'=>'Related To',

@@ -27,7 +27,7 @@ $languageStrings = array(
     'sto_qty' => 'Qty.',
     'Item Name' => 'Part No.',
     'LBL_TOOLS' => 'Sl.No.',
-    'Credit Note No' => 'FailPart Number'
+    'Credit Note No' => 'Fail'
 );
 $jsLanguageStrings = array(
 );

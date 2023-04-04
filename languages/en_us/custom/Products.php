@@ -9,4 +9,5 @@ $languageStrings = array(
 'Singrauli'	=>	'Singrauli',
 'Bilaspur'	=>	'Bilaspur',
 'Mumbai'	=>	'Mumbai',
+'Commercial'	=>	'Commercial',
 );

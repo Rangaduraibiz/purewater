@@ -27,7 +27,7 @@ $languageStrings = array(
     'Account Name' => 'Customer',
     'Project' => 'Project',
     'Add for Creation of Service Order' => 'Add for Creation of STO',
-    'Item Name' => 'Part Number',
+    'Item Name' => '',
     'LBL_TOOLS' => 'Sl No'
 );
 $jsLanguageStrings = array();

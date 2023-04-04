@@ -28,7 +28,7 @@ $languageStrings = array(
 
 	//Field Labels
 	'Product No' => 'رقم المنتج',
-	'Part Number' => 'الرقم الجزئي',
+	'' => 'الرقم الجزئي',
 	'Product Active' => 'المنتج متوفر',
 	'Manufacturer' => 'الشركة المصنعة',
 	'Product Category' => 'فئة المنتج',
