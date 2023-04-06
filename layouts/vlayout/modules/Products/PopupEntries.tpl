@@ -60,9 +60,9 @@
 				</td>
 				{/foreach}
 				<td class="listViewEntryValue {$WIDTHTYPE}">
-					{if $LISTVIEW_ENTRY->get('subProducts') eq true}
-						<a class="subproducts"><b>{vtranslate('Sub Products',$MODULE_NAME)}</b></a>
-						<!--<img class="lineItemPopup cursorPointer alignMiddle" data-popup="ProductsPopup" title="{vtranslate('Products',$MODULE)}" data-module-name="Products" data-field-name="productid" src="{vimage_path('Products.png')}"/>-->
+					{if $LISTVIEW_ENTRY->get('subSparePart') eq true}
+						<a class="subproducts"><b>{vtranslate('Sub SparePart',$MODULE_NAME)}</b></a>
+						<!--<img class="lineItemPopup cursorPointer alignMiddle" data-popup="SparePartPopup" title="{vtranslate('SparePart',$MODULE)}" data-module-name="SparePart" data-field-name="productid" src="{vimage_path('SparePart.png')}"/>-->
 					{else} 
 						Not a Bunble
 					{/if}
@@ -70,9 +70,9 @@
 			</tr>
 			{/foreach}
 			<td class="listViewEntryValue {$WIDTHTYPE}">
-				{if $LISTVIEW_ENTRY->get('subProducts') eq true}
-					<a class="subproducts"><b>{vtranslate('Sub Products',$MODULE_NAME)}</b></a>
-					<!--<img class="lineItemPopup cursorPointer alignMiddle" data-popup="ProductsPopup" title="{vtranslate('Products',$MODULE)}" data-module-name="Products" data-field-name="productid" src="{vimage_path('Products.png')}"/>-->
+				{if $LISTVIEW_ENTRY->get('subSparePart') eq true}
+					<a class="subproducts"><b>{vtranslate('Sub SparePart',$MODULE_NAME)}</b></a>
+					<!--<img class="lineItemPopup cursorPointer alignMiddle" data-popup="SparePartPopup" title="{vtranslate('SparePart',$MODULE)}" data-module-name="SparePart" data-field-name="productid" src="{vimage_path('SparePart.png')}"/>-->
 				{else} 
 					{vtranslate('NOT_A_BUNDLE', $MODULE_NAME)}
 				{/if}

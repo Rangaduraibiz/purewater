@@ -7,15 +7,20 @@ require_once('vtlib/Vtiger/PackageExport.php');
 require_once('vtlib/Vtiger/Module.php');
 require_once('includes/Loader.php');
 
-// $package = new Vtiger_Package();
-// $Moudle =Vtiger_Module::getInstance('Invoice');
-// echo '<pre>';
-// print_r($Moudle);
-// echo '</pre>';
+$package = new Vtiger_Package();
+$Moudle =Vtiger_Module::getInstance('Products');
+echo '<pre>';
+print_r($Moudle);
+echo '</pre>';
 
-// echo 'starting...';
-// $package->export(Vtiger_Module::getInstance('Invoice'),'/test/vtlib','Invoice.zip',true);
-// echo 'sucess';
+echo 'starting...';
+$package->export(Vtiger_Module::getInstance('Products'),'/test/vtlib','Products1.zip',true);
+echo 'sucess';
+
+
+
+
+
 // AddLinks('servicerequest');
 // function AddLinks($modulename) {
 //     require_once('vtlib/Vtiger/Module.php');
@@ -44,8 +49,9 @@ require_once('includes/Loader.php');
 //     // if ($modulename == "Calendar") $this->AddLinks('Events');
 
 // }
-require_once('includes/Loader.php');
-require_once "modules/PDFMaker/PDFMaker.php";
-$pdf = new PDFMaker();
-$pdf->vtlib_handler('servicerequest','module.postupdate');
-echo 'sucess2';
+
+// require_once('includes/Loader.php');
+// require_once "modules/PDFMaker/PDFMaker.php";
+// $pdf = new PDFMaker();
+// $pdf->vtlib_handler('servicerequest','module.postupdate');
+// echo 'sucess2';

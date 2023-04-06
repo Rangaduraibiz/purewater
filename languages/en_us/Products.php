@@ -9,13 +9,13 @@
  *************************************************************************************/
 $languageStrings = array(
 	// Basic Strings
-	'Products' => 'Products',
-	'SINGLE_Products' => 'Product',
-	'LBL_ADD_RECORD' => 'Add Product',
-	'LBL_RECORDS_LIST' => 'Products List',
-
+	'Products' => 'Spare Part',
+	'SINGLE_Products' => 'Spare Part',
+	'LBL_ADD_RECORD' => 'Add Spare ',
+	'LBL_RECORDS_LIST' => 'Spare Part List',
+	'Add Product' => 'Spare Part',
 	// Blocks
-	'LBL_PRODUCT_INFORMATION' => 'Product Details',
+	'LBL_PRODUCT_INFORMATION' => 'Spare Part Details',
 	'LBL_IMAGE_INFORMATION' => 'Product Image Information',
 	'LBL_STOCK_INFORMATION' => 'Stock Information',
 	

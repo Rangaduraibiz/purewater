@@ -1,4 +1,4 @@
-PriceBooks_Detail_Js("Products_Detail_Js",{},{
+PriceBooks_Detail_Js("SparePart_Detail_Js",{},{
 	
 	/**
 	 * Function to register event for image graphics
@@ -19,7 +19,7 @@ PriceBooks_Detail_Js("Products_Detail_Js",{},{
 	},
 	
 	/**
-	 * Function to register event for select button click on pricebooks in Products related list
+	 * Function to register event for select button click on pricebooks in SparePart related list
 	 */
 	registerEventForSelectRecords : function(){
 		var thisInstance = this;
@@ -27,7 +27,7 @@ PriceBooks_Detail_Js("Products_Detail_Js",{},{
 		detailContentsHolder.on('click', 'button[data-modulename="PriceBooks"]', function(e){
 			var selectedTabElement = thisInstance.getSelectedTab();
 			var relatedModuleName = thisInstance.getRelatedModuleName();
-			var relatedController = new Products_RelatedList_Js(thisInstance.getRecordId(), app.getModuleName(), selectedTabElement, relatedModuleName);
+			var relatedController = new SparePart_RelatedList_Js(thisInstance.getRecordId(), app.getModuleName(), selectedTabElement, relatedModuleName);
 			relatedController.showSelectRelationPopup();
 		});
 	},

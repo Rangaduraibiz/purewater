@@ -1,4 +1,4 @@
-PriceBooks_RelatedList_Js("Products_RelatedList_Js",{},{
+PriceBooks_RelatedList_Js("SparePart_RelatedList_Js",{},{
 	
 	/**
 	 * Function to get params for show event invocation

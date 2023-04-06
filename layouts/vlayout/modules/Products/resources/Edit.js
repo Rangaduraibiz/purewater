@@ -1,4 +1,4 @@
-Vtiger_Edit_Js("Products_Edit_Js",{
+Vtiger_Edit_Js("SparePart_Edit_Js",{
 	
 },{
 	baseCurrency : '',

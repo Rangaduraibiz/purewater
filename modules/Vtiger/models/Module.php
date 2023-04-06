@@ -2094,12 +2094,14 @@ class Vtiger_Module_Model extends Vtiger_Module {
 			$moduleShortName = mb_substr(trim($title), 0, 2);
 			$moduleIcon = "<span class='custom-module' title='$title'>$moduleShortName</span>";
 		}
-
+       
 		$imageFilePath = 'layouts/'.Vtiger_Viewer::getLayoutName()."/modules/$moduleName/$moduleName.png";
 		if (file_exists($imageFilePath)) {
 			$moduleIcon = "<img src='$imageFilePath' title='$title'/>";
 		}
-
+		if($moduleName == 'Products'){
+			$moduleIcon ="<i data-feather='$a' title='$title'></i>";
+		}
 		return $moduleIcon;
 	}
 

@@ -123,13 +123,13 @@ Inventory_Edit_Js("servicerequest_Edit_Js",{},{
 			app.request.get({ data: dataOf }).then(function (err, response) {
 				console.log(response);
 				if (err == null) {
-					let referenceFields = { 'cf_3140':'customer_name' , 'phone': 'mobile','address':'address' };
+					let referenceFields = { 'cf_3140':'customer_name' , 'phone': 'mobile','address':'address','serial_number':'product_modal' };
 					for (var key in referenceFields) {
 						let value = referenceFields[key];
 						self.seletctTheMarkVendor(response['data'][key], response['data'][key + '_label'], value);
 					}
+					$("textarea[name='address']").val(response.data.address);
 					var modalName = response.data.product_subcategory;
-					console.log(modalName)
 					$('.product_subategory  option[value="' + modalName + '"]').attr("selected", "selected").trigger('change');
 					$('[data-fieldname="product_subategory"]').attr("readonly", 'readonly');
 	
@@ -138,7 +138,7 @@ Inventory_Edit_Js("servicerequest_Edit_Js",{},{
 					$('.product_category  option[value="' + modalName + '"]').attr("selected", "selected").trigger('change');
 					$('[data-fieldname="product_category"]').attr("readonly", 'readonly');
 					app.helper.hideProgress();
-					dataOf['source_module']='Products';
+					dataOf['source_module'] = 'OnProucts';
 					dataOf['record']=response.data.product_name;
 
 					app.request.get({ data: dataOf }).then(function (err, response) {
@@ -149,6 +149,15 @@ Inventory_Edit_Js("servicerequest_Edit_Js",{},{
 								let value = referenceFields[key];
 								self.seletctTheMarkVendor(response['data'][key], response['data'][key + '_label'], value);
 							}
+							var modalName = response.data.product_subcategory;
+							$('.product_subcategory  option[value="' + modalName + '"]').attr("selected", "selected").trigger('change');
+							$('[data-fieldname="product_subcategory"]').attr("readonly", 'readonly');
+			
+							modalName = response.data.product_category;
+							console.log(modalName)
+							$('.product_category  option[value="' + modalName + '"]').attr("selected", "selected").trigger('change');
+							$('[data-fieldname="product_category"]').attr("readonly", 'readonly');
+							app.helper.hideProgress();
 						}
 					});
 				

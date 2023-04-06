@@ -15,24 +15,25 @@ Vtiger_Edit_Js("JobCard_Edit_Js", {}, {
 		var self = this;
 		let dataOf = {};
 		dataOf['record'] =$("input[name=product_name]").val();
-		dataOf['source_module'] = 'JobCard';
+		dataOf['source_module'] = 'OnProucts';
 		dataOf['module'] = 'JobCard';
 		dataOf['action'] = 'GetAllInfo';
 		app.helper.showProgress();
 		app.request.get({ data: dataOf }).then(function (err, response) {
 			console.log(response);
 			if (err == null) {
-				let referenceFields = { 'product_subcategory':'product_subategory' ,'productcategory':"product_category", 'productcode': 'serial_number','purchase_cost':'final_amount','purchased_date':"" };
+				let referenceFields = {  'product_modal': 'serial_number','price':'final_amount','warrenty_period':"warrenty_period" };
 				for (var key in referenceFields) {
 					let value = referenceFields[key];
 					self.seletctTheMarkVendor(response['data'][key], response['data'][key + '_label'], value);
 				}
+
 				var modalName = response.data.product_subcategory;
 				console.log(modalName)
 				$('.product_subategory  option[value="' + modalName + '"]').attr("selected", "selected").trigger('change');
 				$('[data-fieldname="product_subategory"]').attr("readonly", 'readonly');
 
-				modalName = response.data.productcategory;
+				modalName = response.data.product_category;
 				console.log(modalName)
 				$('.product_category  option[value="' + modalName + '"]').attr("selected", "selected").trigger('change');
 				$('[data-fieldname="product_category"]').attr("readonly", 'readonly');

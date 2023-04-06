@@ -9,18 +9,18 @@
  *************************************************************************************/
 $languageStrings = array(
     
-    'servicerequest'   =>  'servicerequests',
+    'servicerequest'   =>  'Service Requests',
 	//DetailView Actions
-	'SINGLE_servicerequest' => 'servicerequest',
+	'SINGLE_servicerequest' => 'Service Requests',
 	'LBL_EXPORT_TO_PDF' => 'Export to PDF',
     'LBL_SEND_MAIL_PDF' => 'Send Email with PDF',
 
 	//Basic strings
-	'LBL_ADD_RECORD' => 'Add servicerequest',
-	'LBL_RECORDS_LIST' => 'servicerequest List',
+	'LBL_ADD_RECORD' => 'Add Service Requests',
+	'LBL_RECORDS_LIST' => 'Service Requests List',
 
 	// Blocks
-	'LBL_servicerequest_INFORMATION' => 'servicerequest Details',
+	'LBL_servicerequest_INFORMATION' => 'Service Requests Details',
 
 	//Field labels
 	'Sales Order' => 'Sales Order',
@@ -34,7 +34,7 @@ $languageStrings = array(
 	//Added for existing Picklist Entries
 
 	'Sent'=>'Sent',
-	'Credit servicerequest'=>'Credit servicerequest',
+	'Credit servicerequest'=>'Credit Service Requests',
 	'Paid'=>'Paid',
 	'AutoCreated'=>'AutoCreated',
 	'Cancel' => 'Cancel',

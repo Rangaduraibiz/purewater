@@ -21,7 +21,7 @@
 	<input type="hidden" value="{$SOURCE_FIELD}" id="sourceField">
 	<input type="hidden" value="{$SOURCE_RECORD}" id="sourceRecord">
 	<input type="hidden" value="{$SOURCE_MODULE}" id="parentModule">
-	<input type="hidden" value="PriceBook_Products_Popup_Js" id="popUpClassName"/>
+	<input type="hidden" value="PriceBook_SparePart_Popup_Js" id="popUpClassName"/>
 	{assign var=WIDTHTYPE value=$USER_MODEL->get('rowheight')}
 	<div class="bottomscroll-div">
 		<table class="table table-bordered listViewEntriesTable">

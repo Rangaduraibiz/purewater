@@ -33,10 +33,6 @@
                     <input type="password" autoFilled="true" id="password" name="password" ng-model="auth.password" ng-required="true">
                     <div class="form-errors" ng-message="required" ng-show="loginForm.password.$invalid && loginForm.password.$touched">Password required!</div>
                 </md-input-container>
-                <!--div ng-messages="loginForm.username.$error" class="form-errors"-->
-                    
-                    
-                <!--/div-->
                 <md-input-container>
                     <md-button class="md-raised" type="submit" value="Login">
                         Login

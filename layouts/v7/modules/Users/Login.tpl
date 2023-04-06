@@ -353,16 +353,15 @@
 	<span class="app-nav"></span>
 	<div class="container-fluid loginPageContainer">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 login_title">
-			<h1 class="text-center">Welcome To CCHS Portal</h1>
+			<h1 class="text-center"></h1>
 		</div>
 
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 login_beml">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 login_beml">
 			<div class="loginDiv widgetHeight ">
 				<div class="bg-pattern">
 					<div class="p-4 ">
 						<img src="test/logo/logo.png" class="img-responsive user-logo">
-						<p class="text-muted mb-4 mt-3 auto_text">Welcome to Customer Complaint Handling Solutions Portal </p>
-						<div>
+												<div>
 							<span class="{if !$ERROR}hide{/if} failureMessage" id="validationMessage">{$MESSAGE}</span>
 							<span class="{if !$MAIL_STATUS}hide{/if} successMessage">{$MESSAGE}</span>
 						</div>
@@ -372,7 +371,7 @@
 								<input type="hidden" name="module" value="Users" />
 								<input type="hidden" name="action" value="Login" />
 								<div class="form-group">
-									<label for="username">Badge Number</label>
+									<label for="username">Username</label>
 									<input class="form-control" id="usernameLogin" type="text" name="username" placeholder="Badge Number">
 									<span class="failureMessage hide" id="validationMessageBadge"></span>
 								</div>
@@ -442,37 +441,7 @@
 				<a style="display:none" href="forgotPasswordDiv" class="forgotPasswordLink text-white-50" style="color: #15c;">Forgot password?</a>
 			</div>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-			<div id="bemlCarousel" class="carousel slide" data-ride="carousel">
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#bemlCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#bemlCarousel" data-slide-to="1"></li>
-{*					<li data-target="#bemlCarousel" data-slide-to="2"></li>*}
-{*					<li data-target="#bemlCarousel" data-slide-to="3"></li>*}
-				</ol>
-
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner">
-					<div class="item active">
-						<img src="test/logo/slider/BEML_CRM_SLIDES_SR.jpg" alt="Los Angeles">
-					</div>
-					<div class="item">
-						<img src="test/logo/slider/BEML_CRM_CCH.jpg" alt="Los Angeles">
-					</div>
-
-{*					<div class="item">*}
-{*						<img src="https://3.7.71.53/beml/test/logo/slider/BEML_CRM_SLIDES_PROCESS.jpg" alt="Los Angeles">*}
-{*					</div>*}
-
-{*					<div class="item">*}
-{*						<img src="https://3.7.71.53/beml/test/logo/slider/BEML_ANY TERRAIN.jpg" alt="Los Angeles">*}
-{*					</div>*}
-				</div>
-			</div>
-
-		</div>
+		
 
 		<div style="display:none" class="col-lg-1 hidden-xs hidden-sm hidden-md">
 			<div class="separatorDiv"></div>
