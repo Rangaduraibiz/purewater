@@ -330,23 +330,19 @@
 	</style>
 	<span class="app-nav"></span>
 	<div class="container-fluid loginPageContainer">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 login_title">
-			<h1 style="margin: 0px" class="text-center">Welcome To CCHS Portal</h1>
-		</div>
 		<input type="hidden" name="OFFICETOROLEDEPENDENCY" data-value='{ZEND_JSON::encode($OFFICETOROLEDEPENDENCY)|escape}' />
 		<input id="uidsaver" type="text" hidden>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 login_beml">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 login_beml">
 			<form class="form-horizontal" id="SignUpFormDiv" name="SignUpFormDiv">
 				<div class="loginDiv widgetHeight ">
 					<div class="bg-pattern">
 						<div style="padding-top: 10px">
-							<p class="text-muted mb-4 mt-3 auto_text">Welcome to Customer Complaint Handling Solutions Portal </p>
 							<div>
 								<span class="{if !$ERROR}hide{/if} failureMessage" id="validationMessage">{$MESSAGE}</span>
 								<span class="{if !$MAIL_STATUS}hide{/if} successMessage">{$MESSAGE}</span>
 							</div>
 								{foreach from=$USERBLOCKS item=blockitem key=blockkey}
-									<h4 style="text-align: center;">{{$blockitem['label']}}</h4>
+									<h4 style="text-align: center;">Register Details</h4>
 									{foreach from=$blockitem['fields'] item=item key=key}
 									<div class="">
 										{if  $item['name'] eq 'assigned_user_id'}
@@ -483,22 +479,6 @@
 			</form>
 			<div class="forgot_pwd">
 				<a style="display:none" href="forgotPasswordDiv" class="forgotPasswordLink text-white-50" style="color: #15c;">Forgot password?</a>
-			</div>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<div id="bemlCarousel" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#bemlCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#bemlCarousel" data-slide-to="1"></li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="item active">
-						<img src="test/logo/slider/BEML_CRM_SLIDES_SR.jpg" alt="Los Angeles">
-					</div>
-					<div class="item">
-						<img src="test/logo/slider/BEML_CRM_CCH.jpg" alt="Los Angeles">
-					</div>
-				</div>
 			</div>
 		</div>
 		<div style="display:none" class="col-lg-1 hidden-xs hidden-sm hidden-md">
